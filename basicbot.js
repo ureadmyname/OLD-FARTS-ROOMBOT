@@ -1477,6 +1477,43 @@ return API.moderateForceSkip();
                         }
                 },
              **/
+             
+            acronymCommand: {
+                command: 'acronym',
+                rank: 'user',
+                type: 'exact',
+                getLetters: function (chat) {
+                var l = Math.floor(Math.random() * basicBot.chat.letter1.length);
+                return basicBot.chat.letter1[l];
+                },
+                getLetters2: function (chat) {
+                var le = Math.floor(Math.random() * basicBot.chat.letter2.length);
+                return basicBot.chat.letter2[le];
+                },
+                getLetters3: function (chat) {
+                var len = Math.floor(Math.random() * basicBot.chat.letter3.length);
+                return basicBot.chat.letter3[len];
+                },
+                getLetters4: function (chat) {
+                var leng = Math.floor(Math.random() * basicBot.chat.letter4.length);
+                return basicBot.chat.letter4[leng];
+                },
+                getLetters5: function (chat) {
+                var lengt = Math.floor(Math.random() * basicBot.chat.letter5.length);
+                return basicBot.chat.letter5[lengt];
+                },
+                getLetters6: function (chat) {
+                var length = Math.floor(Math.random() * basicBot.chat.letter6.length);
+                return basicBot.chat.letter6[length];
+                },
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    return API.sendChat(subChat(basicBot.chat.letter, {letter: this.getLetters, letter2: this.getLetters2, letter3: this.getLetters3, letter4: this.getLetters4, letter5: this.getLetters5, letter6: this.getLetters6}));
+                              }
+                          }
+                      },
 
             activeCommand: {
                 command: 'active',
@@ -1918,43 +1955,6 @@ return API.moderateForceSkip();
                     }
                 }
             },
-            
-                acronymCommand: {
-                command: 'acronym',
-                rank: 'user',
-                type: 'exact',
-                getLetters: function (chat) {
-                var l = Math.floor(Math.random() * basicBot.chat.letter1.length);
-                return basicBot.chat.letter1[l];
-                },
-                getLetters2: function (chat) {
-                var le = Math.floor(Math.random() * basicBot.chat.letter2.length);
-                return basicBot.chat.letter2[le];
-                },
-                getLetters3: function (chat) {
-                var len = Math.floor(Math.random() * basicBot.chat.letter3.length);
-                return basicBot.chat.letter3[len];
-                },
-                getLetters4: function (chat) {
-                var leng = Math.floor(Math.random() * basicBot.chat.letter4.length);
-                return basicBot.chat.letter4[leng];
-                },
-                getLetters5: function (chat) {
-                var lengt = Math.floor(Math.random() * basicBot.chat.letter5.length);
-                return basicBot.chat.letter5[lengt];
-                },
-                getLetters6: function (chat) {
-                var length = Math.floor(Math.random() * basicBot.chat.letter6.length);
-                return basicBot.chat.letter6[length];
-                },
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                    return API.sendChat(subChat(basicBot.chat.letter, {letter: this.getLetters, letter2: this.getLetters2, letter3: this.getLetters3, letter4: this.getLetters4, letter5: this.getLetters5, letter6: this.getLetters6}));
-                              }
-                          }
-                      },
 
             cookieCommand: {
                 command: 'cookie',
