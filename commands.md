@@ -108,7 +108,7 @@ User
 |!eta | | shows how long before you reach the booth |
 |!fav | | remind people to favorite the room |
 |!fb | | links to the room's Facebook page (not set in settings) |
-|!fortune | | get or give a fortune from qtbot the fortune teller |
+|!fortune | | get or give a fortune from the bot, the fortune teller |
 |!ghostbuster | @user | checks if user is ghosting |
 |!gif | (message) | returns a gif (from giphy) related to the tag provided, Returns a random gif if no tags are provided |
 |!help | | links to an image to help get people started on plug **NOT AVAILABLE FOR THE MOMENT**|
