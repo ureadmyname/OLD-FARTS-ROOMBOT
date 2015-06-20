@@ -1,11 +1,8 @@
 {
 "balls": [
-"I would answer but qtbot is drunk right now, shhhh.",
-"The #dolphingang would know, I don't.",
 "Concentrate and ask again.",
 "Yer, something like that.",
 "Better not tell you now.",
-"I don't know, ask QTπ.",
 "Reply hazy, try again.",
 "You will have to wait.",
 "Outlook not so good.",
@@ -32,21 +29,12 @@
 "Outlook so so.",
 "Looking good!",
 "Outlook good.",
-"IDC, at all.",
 "Most likely.",
-"DEEZ NUTS!",
-"I.D.G.A.F.",
 "Who knows?",
-"Probably.",
-"S.T.F.U.",
-"Y.O.L.O."
+"Probably."
 ],
 "candies": [
-"A Bowl Of Neapolitan Ice Cream",
-"A Bowl Of Strawberry Ice Cream",
 "A Packet Of Hershey's Caramels",
-"A Bowl Of Chocolate Ice Cream",
-"A Bowl Of Vanilla Ice Cream",
 "A Hershey Almond Toffee Bar",
 "A Packet Of Sourpatch Kids",
 "A Reeses Peanut Butter Cup",
@@ -164,12 +152,10 @@
 "You will receive a fortune."
 ],
 "props": [
-"This song = 11/10 IGN.",
 "This track is amazing.",
 "Love this song <3",
 "Excellent tune.",
 "Awesome track.",
-"Awesometastic.",
 "Amazing song.",
 "Great song.",
 "Nice Play."
@@ -380,27 +366,27 @@
 
 
 "eatprop": "/me ",
-"nouserprop": "/em [qtbot] doesn't see %%NAME%% in this room.",
-"selfprop": "/me [qtbot] @%%NAME%%, Giving props to yourself, that's a bit greedy. How about giving other people props!",
-"prop": "/me [qtbot]: @%%NAMEFROM%% says %%PROP%% to, @%%NAMETO%%",
+"nouserprop": "/em [bot] doesn't see %%NAME%% in this room.",
+"selfprop": "/me [bot] @%%NAME%%, Giving props to yourself, that's a bit greedy. How about giving other people props!",
+"prop": "/me [bot]: @%%NAMEFROM%% says %%PROP%% to, @%%NAMETO%%",
 
 
-"eatcandy": "/me [qtbot] eats a candy.",
-"nousercandy": "/em [qtbot] doesn't see %%NAME%% in this room.",
-"selfcandy": "/me [qtbot] @%%NAME%%, Giving candies to yourself, How about giving other people candies :)",
-"candy": "/me [qtbot]: @%%NAMEFROM%% gives @%%NAMETO%%, %%CANDY%%!",
+"eatcandy": "/me [bot] eats a candy.",
+"nousercandy": "/em [bot] doesn't see %%NAME%% in this room.",
+"selfcandy": "/me [bot] @%%NAME%%, Giving candies to yourself, How about giving other people candies :)",
+"candy": "/me [bot]: @%%NAMEFROM%% gives @%%NAMETO%%, %%CANDY%%!",
 
 
-"eatshots": "/me [qtbot] takes a shot.",
-"nousershots": "/em [qtbot] doesn't see %%NAME%% in this room.",
-"selfshots": "/me [qtbot] @%%NAME%%, Buying yourself a shot, How about you buy a round for once :)",
-"shot": "/me [qtbot]: @%%NAMEFROM%% buys @%%NAMETO%% a shot, %%SHOT%%!",
+"eatshots": "/me [bot] takes a shot.",
+"nousershots": "/em [bot] doesn't see %%NAME%% in this room.",
+"selfshots": "/me [bot] @%%NAME%%, Buying yourself a shot, How about you buy a round for once :)",
+"shot": "/me [bot]: @%%NAMEFROM%% buys @%%NAMETO%% a shot, %%SHOT%%!",
 
 
 "eatfortune": "/me ",
-"nouserfortune": "/em [qtbot] doesn't see %%NAME%% in this room.",
-"selffortune": "/me @%%NAMETO%%, you buy a fortune for yourself from, qtbot the fortune teller, qtbot says, '%%FORTUNE%%'",
-"fortune": "/me @%%NAMEFROM%% buys @%%NAMETO%% a fortune from, qtbot the fortune teller, qtbot says, '%%FORTUNE%%'",
+"nouserfortune": "/em [bot] doesn't see %%NAME%% in this room.",
+"selffortune": "/me @%%NAMETO%%, you buy a fortune for yourself from, the bot, the fortune teller, the bot says, '%%FORTUNE%%'",
+"fortune": "/me @%%NAMEFROM%% buys @%%NAMETO%% a fortune from, the bot, the fortune teller, the bot says, '%%FORTUNE%%'",
 "letter1":[
 "A",
 "B",
@@ -548,5 +534,5 @@
 "Y",
 "Z"
 ],
-"letter": "[qtbot] Acronym: %%LETTER%%, %%LETTER2%%, %%LETTER3%%, %%LETTER4%%, %%LETTER5%%, %%LETTER6%%"
+"letter": "[bot] Acronym: %%LETTER%%, %%LETTER2%%, %%LETTER3%%, %%LETTER4%%, %%LETTER5%%, %%LETTER6%%"
 }
