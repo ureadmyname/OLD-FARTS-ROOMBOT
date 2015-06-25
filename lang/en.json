@@ -354,8 +354,9 @@
 "welcomemsg": "welcome message",
 "whois": "\/me [%%NAME1%%] Username: %%NAME2%%, ID: %%ID%%, Rank: %%RANK%%, Joined: %%JOINED%%, Level: %%LEVEL%%, Language: %%LANGUAGE%%, Avatar: %%AVATAR%%, Status: %%STATUS%%%%PROFILE%%",
 "winnerpicked": "\/me A winner has been picked! @%%NAME%% to position %%POSITION%%.",
+"youaredj": "\/me @%%NAME%%, you are currently DJing.",
+"youarenext": "\/me @%%NAME%%, you are DJing after this song.",
 "youtube": "\/me [%%NAME%%] Subscribe to us on youtube: %%LINK%%",
-
 
 
 
