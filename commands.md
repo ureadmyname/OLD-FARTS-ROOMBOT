@@ -13,8 +13,8 @@ Manager+
 |!add | @user | add user to the waitlist |
 |!afklimit | X | sets the maximum afk time |
 |!afkremoval | | toggles the afk check |
-|!autoFav | | make !fav be displayed on a timer |
-|!autoRoulette | | make !roulette be displayed on a timer |
+|!autofav | | make !fav be displayed on a timer |
+|!autoroulette | | make !roulette be displayed on a timer |
 |!autoskip | | skips songs automatically when they're done (use when the circles-bug happens) |
 |!botname |	(botname) | change the default bot name |
 |!bouncer+ | | disable/enable bouncer+ |
