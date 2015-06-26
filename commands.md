@@ -139,3 +139,10 @@ All Sub-Commands
 ||nsfw | if the song played contained an NSFW image or sound |
 ||sound | if the song played had horrible sound quality or no sound |
 ||theme | if the song doesn't fit the room theme  |
+
+Coming Soon... Hop3fully
+-------------------------
+
+|Command | Description | Estimated Time |
+|:------:|:---------:|:---------------:|:-----------------------:|
+|idk|why not suggest something!||
