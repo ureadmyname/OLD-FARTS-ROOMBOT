@@ -14,6 +14,7 @@ Manager+
 |!afklimit | X | sets the maximum afk time |
 |!afkremoval | | toggles the afk check |
 |!autofav | | make !fav be displayed on a timer |
+|!autoplzwoot | | make !plzwoot be displayed on a timer |
 |!autoroulette | | make !roulette be displayed on a timer |
 |!autoskip | | skips songs automatically when they're done (use when the circles-bug happens) |
 |!botname |	(botname) | change the default bot name |
@@ -117,6 +118,7 @@ User
 |!link | | when the user is the DJ, give a link to the current song |
 |!op | | links to the OverPlayed list |
 |!ping | | pong! |
+|!plzwoot | | reminds people to woot if they're on the dj waitlist |
 |!props | (@user) | give "props" to someone for playing a great song |
 |!ref | | the "I.T" support command for plug.dj "refresh" |
 |!rouletteinfo | | explains the roulette to people who don't know what it is |
