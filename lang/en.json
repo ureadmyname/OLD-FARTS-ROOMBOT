@@ -365,12 +365,7 @@
 "selfcookie": "\/me @%%NAME%%, you're a bit greedy, aren't you? Giving cookies to yourself, bah. Share some with other people!",
 "cookie": "\/me @%%NAMETO%%, %%NAMEFROM%% %%COOKIE%%",
 
-
-"eatprop": "/me ",
-"nouserprop": "/em [bot] doesn't see %%NAME%% in this room.",
-"selfprop": "/me [bot] @%%NAME%%, Giving props to yourself, that's a bit greedy. How about giving other people props!",
-"prop": "/me [bot]: @%%NAMEFROM%% says %%PROP%% to, @%%NAMETO%%",
-
+"prop": "\/me Song props: %%NAMEFROM%% says, %%PROP%% to %%DJ%%.",
 
 "eatcandy": "/me [bot] eats a candy.",
 "nousercandy": "/em [bot] doesn't see %%NAME%% in this room.",
