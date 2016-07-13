@@ -367,20 +367,20 @@
 
 "prop": "\/me Song props: %%NAMEFROM%% says, %%PROP%% to %%DJ%%.",
 
-"eatcandy": "/me [bot] eats a candy.",
-"nousercandy": "/em [bot] doesn't see %%NAME%% in this room.",
-"selfcandy": "/me [bot] @%%NAME%%, Giving candies to yourself, How about giving other people candies :)",
-"candy": "/me [bot]: @%%NAMEFROM%% gives @%%NAMETO%%, %%CANDY%%!",
+"eatcandy": "/me [K - NINE] eats a candy.",
+"nousercandy": "/em [K - NINE] doesn't see %%NAME%% in this room.",
+"selfcandy": "/me [K - NINE] @%%NAME%%, Giving candies to yourself, How about giving other people candies :)",
+"candy": "/me [K - NINE]: @%%NAMEFROM%% gives @%%NAMETO%%, %%CANDY%%!",
 
 
-"eatshots": "/me [bot] takes a shot.",
-"nousershots": "/em [bot] doesn't see %%NAME%% in this room.",
-"selfshots": "/me [bot] @%%NAME%%, Buying yourself a shot, How about you buy a round for once :)",
-"shot": "/me [bot]: @%%NAMEFROM%% buys @%%NAMETO%% a shot, %%SHOT%%!",
+"eatshots": "/me [K - NINE] takes a shot.",
+"nousershots": "/em [K - NINE] doesn't see %%NAME%% in this room.",
+"selfshots": "/me [K - NINE] @%%NAME%%, Buying yourself a shot, How about you buy a round for once :)",
+"shot": "/me [K - NINE]: @%%NAMEFROM%% buys @%%NAMETO%% a shot, %%SHOT%%!",
 
 
 "eatfortune": "/me ",
-"nouserfortune": "/em [bot] doesn't see %%NAME%% in this room.",
+"nouserfortune": "/em [K - NINE] doesn't see %%NAME%% in this room.",
 "selffortune": "/me @%%NAMETO%%, you buy a fortune for yourself from, the bot, the fortune teller, the bot says, '%%FORTUNE%%'",
 "fortune": "/me @%%NAMEFROM%% buys @%%NAMETO%% a fortune from, the bot, the fortune teller, the bot says, '%%FORTUNE%%'",
 "letter1":[
@@ -530,5 +530,5 @@
 "Y",
 "Z"
 ],
-"letter": "[bot] Acronym: %%LETTER%%, %%LETTER2%%, %%LETTER3%%, %%LETTER4%%, %%LETTER5%%, %%LETTER6%%"
+"letter": "[K - NINE] Acronym: %%LETTER%%, %%LETTER2%%, %%LETTER3%%, %%LETTER4%%, %%LETTER5%%, %%LETTER6%%"
 }
