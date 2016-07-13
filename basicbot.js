@@ -2875,40 +2875,27 @@ return API.moderateForceSkip();
                 }
             },
 
-            propCommand: {
+            propsCommand: {
                 command: 'props',
                 rank: 'user',
-                type: 'startsWith',
-                getProp: function (chat) {
+                type: 'exact',
+                getProps: function (chat) {
                     var p = Math.floor(Math.random() * basicBot.chat.props.length);
                     return basicBot.chat.props[p];
                 },
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-                        var space = msg.indexOf(' ');
-                        if (space === -1) {
-                            API.sendChat(basicBot.chat.eatprop);
-                            return false;
-                        }
                         else {
+                            var msg = chat.message;
+                            var space = msg.indexOf(' ');
                             var name = msg.substring(space + 2);
                             var user = basicBot.userUtilities.lookupUserName(name);
-                            if (user === false || !user.inRoom) {
-                                return API.sendChat(subChat(basicBot.chat.nouserprop, {name: name}));
-                            }
-                            else if (user.username === chat.un) {
-                                return API.sendChat(subChat(basicBot.chat.selfprop, {name: name}));
-                            }
-                            else {
-                                return API.sendChat(subChat(basicBot.chat.prop, {nameto: user.username, namefrom: chat.un, prop: this.getProp()}));
-                            }
-                        }
-                    }
-                }
-            }, 
+                            var dj = API.getDJ().username;
+                            return API.sendChat(subChat(basicBot.chat.prop, {namefrom: chat.un, dj: dj, prop: this.getProps()}));
+                                }
+                    	    }
+},
 
             pingCommand: {
                 command: 'ping',
