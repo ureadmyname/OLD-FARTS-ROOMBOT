@@ -282,7 +282,7 @@
 "madeby": "\/me This bot was made by %%NAME%%.",
 "maximumafktimeset": "\/me [@%%NAME%%] Maximum afk duration set to %%TIME%% minutes.",
 "maxlengthtime": "\/me [@%%NAME%%] The maximum song duration is set to %%TIME%% minutes.",
-"motd": "MotD",
+"motd": "[M.O.T.D] MotD",
 "motdintervalset": "\/me MotD interval set to %%INTERVAL%%.",
 "motdset": "\/me MotD set to:  %%MSG%%",
 "move": "\/me [%%NAME%% used move]",
