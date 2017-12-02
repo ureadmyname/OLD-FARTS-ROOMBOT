@@ -458,17 +458,17 @@ return str;
                 for (var i = 0; i < botCreatorIDs.length; i++) {
                     if (botCreatorIDs[i].indexOf(u.id) > -1) return 10;
                 }
-                if (u.gRole < 2) return u.role;
+                if (u.gRole < 2000) return u.role;
                 else {
                     switch (u.gRole) {
-                        case 2:
-                            return 7;
-                        case 3:
-                            return 8;
-                        case 4:
-                            return 9;
-                        case 5:
-                            return 10;
+                        case 2000:
+                            return 7000;
+                        case 3000:
+                            return 8000;
+                        case 4000:
+                            return 9000;
+                        case 5000:
+                            return 10000;
                     }
                 }
                 return 0;
@@ -545,28 +545,28 @@ return str;
                 var rankInt = null;
                 switch (rankString) {
                     case "admin":
-                        rankInt = 10;
+                        rankInt = 10000;
                         break;
                     case "ambassador":
-                        rankInt = 7;
+                        rankInt = 7000;
                         break;
                     case "host":
-                        rankInt = 5;
+                        rankInt = API.ROLE.HOST;
                         break;
                     case "cohost":
-                        rankInt = 4;
+                        rankInt = API.ROLE.COHOST;
                         break;
                     case "manager":
-                        rankInt = 3;
+                        rankInt = API.ROLE.MANAGER;
                         break;
                     case "bouncer":
-                        rankInt = 2;
+                        rankInt = API.ROLE.BOUNCER;
                         break;
                     case "residentdj":
-                        rankInt = 1;
+                        rankInt = API.ROLE.DJ;
                         break;
                     case "user":
-                        rankInt = 0;
+                        rankInt = API.ROLE.NONE;
                         break;
                 }
                 return rankInt;
@@ -1094,7 +1094,7 @@ return API.moderateForceSkip();
         },
         chatcleaner: function (chat) {
             if (!basicBot.settings.filterChat) return false;
-            if (basicBot.userUtilities.getPermission(chat.uid) > 1) return false;
+            if (basicBot.userUtilities.getPermission(chat.uid) > API.ROLE.DJ) return false;
             var msg = chat.message;
             var containsLetters = false;
             for (var i = 0; i < msg.length; i++) {
@@ -1143,7 +1143,7 @@ return API.moderateForceSkip();
                     return true;
                 }
                 if (basicBot.settings.lockdownEnabled) {
-                    if (perm === 0) {
+                    if (perm === API.ROLE.NONE) {
                         API.moderateDeleteChat(chat.cid);
                         return true;
                     }
@@ -1158,7 +1158,7 @@ return API.moderateForceSkip();
                 /**
                  var plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
                  if (plugRoomLinkPatt.exec(msg)) {
-                    if (perm === 0) {
+                    if (perm === API.ROLE.NONE) {
                         API.sendChat(subChat(basicBot.chat.roomadvertising, {name: chat.un}));
                         API.moderateDeleteChat(chat.cid);
                         return true;
@@ -1207,11 +1207,11 @@ return API.moderateForceSkip();
                 var userPerm = basicBot.userUtilities.getPermission(chat.uid);
                 //console.log("name: " + chat.un + ", perm: " + userPerm);
                 if (chat.message !== basicBot.settings.commandLiteral + 'join' && chat.message !== basicBot.settings.commandLiteral + "leave") {
-                    if (userPerm === 0 && !basicBot.room.usercommand) return void (0);
+                    if (userPerm === API.ROLE.NONE && !basicBot.room.usercommand) return void (0);
                     if (!basicBot.room.allcommand) return void (0);
                 }
                 if (chat.message === basicBot.settings.commandLiteral + 'eta' && basicBot.settings.etaRestriction) {
-                    if (userPerm < 2) {
+                    if (userPerm < API.ROLE.BOUNCER) {
                         var u = basicBot.userUtilities.lookupUser(chat.uid);
                         if (u.lastEta !== null && (Date.now() - u.lastEta) < 1 * 60 * 60 * 1000) {
                             API.moderateDeleteChat(chat.cid);
@@ -1236,7 +1236,7 @@ return API.moderateForceSkip();
                     }
                 }
 
-                if (executed && userPerm === 0) {
+                if (executed && userPerm === API.ROLE.NONE) {
                     basicBot.room.usercommand = false;
                     setTimeout(function () {
                         basicBot.room.usercommand = true;
@@ -1326,8 +1326,8 @@ return API.moderateForceSkip();
                 return 'Function.'
             };
             var u = API.getUser();
-            if (basicBot.userUtilities.getPermission(u) < 2) return API.chatLog(basicBot.chat.greyuser);
-            if (basicBot.userUtilities.getPermission(u) === 2) API.chatLog(basicBot.chat.bouncer);
+            if (basicBot.userUtilities.getPermission(u) < API.ROLE.BOUNCER) return API.chatLog(basicBot.chat.greyuser);
+            if (basicBot.userUtilities.getPermission(u) === API.ROLE.BOUNCER) API.chatLog(basicBot.chat.bouncer);
             basicBot.connectAPI();
             API.moderateDeleteChat = function (cid) {
                 $.ajax({
@@ -1426,36 +1426,36 @@ return API.moderateForceSkip();
                 var minPerm;
                 switch (minRank) {
                     case 'admin':
-                        minPerm = 10;
+                        minPerm = 10000;
                         break;
                     case 'ambassador':
-                        minPerm = 7;
+                        minPerm = 7000;
                         break;
                     case 'host':
-                        minPerm = 5;
+                        minPerm = API.ROLE.HOST;
                         break;
                     case 'cohost':
-                        minPerm = 4;
+                        minPerm = API.ROLE.COHOST;
                         break;
                     case 'manager':
-                        minPerm = 3;
+                        minPerm = API.ROLE.MANAGER;
                         break;
                     case 'mod':
                         if (basicBot.settings.bouncerPlus) {
-                            minPerm = 2;
+                            minPerm = API.ROLE.BOUNCER;
                         }
                         else {
-                            minPerm = 3;
+                            minPerm = API.ROLE.MANAGER;
                         }
                         break;
                     case 'bouncer':
-                        minPerm = 2;
+                        minPerm = API.ROLE.BOUNCER;
                         break;
                     case 'residentdj':
-                        minPerm = 1;
+                        minPerm = API.ROLE.DJ;
                         break;
                     case 'user':
-                        minPerm = 0;
+                        minPerm = API.ROLE.NONE;
                         break;
                     default:
                         API.chatLog('error assigning minimum permission');
@@ -1860,7 +1860,7 @@ return API.moderateForceSkip();
                             if (!basicBot.settings.bouncerPlus) {
                                 var id = chat.uid;
                                 var perm = basicBot.userUtilities.getPermission(id);
-                                if (perm > 2) {
+                                if (perm > API.ROLE.BOUNCER) {
                                     basicBot.settings.bouncerPlus = true;
                                     return API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': 'Bouncer+'}));
                                 }
@@ -2061,7 +2061,7 @@ return API.moderateForceSkip();
                         else {
                             name = msg.substring(cmd.length + 2);
                             var perm = basicBot.userUtilities.getPermission(chat.uid);
-                            if (perm < 2) return API.sendChat(subChat(basicBot.chat.dclookuprank, {name: chat.un}));
+                            if (perm < API.ROLE.BOUNCER) return API.sendChat(subChat(basicBot.chat.dclookuprank, {name: chat.un}));
                         }
                         var user = basicBot.userUtilities.lookupUserName(name);
                         if (typeof user === 'boolean') return API.sendChat(subChat(basicBot.chat.invaliduserspecified, {name: chat.un}));
@@ -2131,7 +2131,7 @@ return API.moderateForceSkip();
                         var dj = API.getDJ().username;
                         var name;
                         if (msg.length > cmd.length) {
-                            if (perm < 2) return void (0);
+                            if (perm < API.ROLE.BOUNCER) return void (0);
                             name = msg.substring(cmd.length + 2);
                         } else name = chat.un;
                         var user = basicBot.userUtilities.lookupUserName(name);
@@ -2525,7 +2525,7 @@ return API.moderateForceSkip();
                         var dj = API.getDJ().id;
                         var isDj = false;
                         if (dj === chat.uid) isDj = true;
-                        if (perm >= 1 || isDj) {
+                        if (perm >= API.ROLE.DJ || isDj) {
                             if (media.format === 1) {
                                 var linkToSong = "http://youtu.be/" + media.cid;
                                 API.sendChat(subChat(basicBot.chat.songlink, {name: from, link: linkToSong}));
@@ -3489,7 +3489,7 @@ return API.moderateForceSkip();
                         var permFrom = basicBot.userUtilities.getPermission(chat.uid);
                         /**
                          if (msg.indexOf('@') === -1 && msg.indexOf('all') !== -1) {
-                            if (permFrom > 2) {
+                            if (permFrom > API.ROLE.BOUNCER) {
                                 basicBot.room.mutedUsers = [];
                                 return API.sendChat(subChat(basicBot.chat.unmutedeveryone, {name: chat.un}));
                             }
@@ -3695,21 +3695,21 @@ return API.moderateForceSkip();
                                     var language = "Malay"
                                 }
                                 var rawrank = API.getUser(id).role;
-                                if (rawrank == "0"){
+                                if (rawrank == API.ROLE.NONE.toString()){
                                     var rank = "User";
-                                } else if (rawrank == "1"){
+                                } else if (rawrank == API.ROLE.DJ.toString()){
                                     var rank = "Resident DJ";
-                                } else if (rawrank == "2"){
+                                } else if (rawrank == API.ROLE.BOUNCER.toString()){
                                     var rank = "Bouncer";
-                                } else if (rawrank == "3"){
+                                } else if (rawrank == API.ROLE.MANAGER.toString()){
                                     var rank = "Manager"
-                                } else if (rawrank == "4"){
+                                } else if (rawrank == API.ROLE.COHOST.toString()){
                                     var rank = "Co-Host"
-                                } else if (rawrank == "5"){
+                                } else if (rawrank == API.ROLE.HOST.toString()){
                                     var rank = "Host"
-                                } else if (rawrank == "7"){
+                                } else if (rawrank == "7000"){
                                     var rank = "Brand Ambassador"
-                                } else if (rawrank == "10"){
+                                } else if (rawrank == "10000"){
                                     var rank = "Admin"
                                 }
                                 var slug = API.getUser(id).slug;
