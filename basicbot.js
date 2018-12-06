@@ -92,7 +92,7 @@ return sock.msg(data);
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/ureadmyname/OLD-FARTS-ROOMBOT/master/lang/langIndex.json", function (json) {
+        $.get("https://cdn.jsdelivr.net/gh/ureadmyname/OLD-FARTS-ROOMBOT/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -233,9 +233,9 @@ return str;
         status: false,
         name: "basicBot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/ureadmyname/OLD-FARTS-ROOMBOT/master/basicbot.js",
+        scriptLink: "https://cdn.jsdelivr.net/gh/ureadmyname/OLD-FARTS-ROOMBOT/basicbot.js",
         cmdLink: "http://git.io/vLJEB",
-        chatLink: "https://rawgit.com/ureadmyname/OLD-FARTS-ROOMBOT/master/lang/en.json",
+        chatLink: "https://cdn.jsdelivr.net/gh/ureadmyname/OLD-FARTS-ROOMBOT/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -243,7 +243,7 @@ return str;
         settings: {
             botName: "basicBot",
             language: "english",
-            chatLink: "https://rawgit.com/ureadmyname/OLD-FARTS-ROOMBOT/master/lang/en.json",
+            chatLink: "https://cdn.jsdelivr.net/gh/ureadmyname/OLD-FARTS-ROOMBOT/lang/en.json",
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -299,7 +299,7 @@ return str;
             blacklists: {
                 NSFW: "https://rawgit.com/ureadmyname/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
                 OP: "https://rawgit.com/ureadmyname/basicBot-customization/master/blacklists/ExampleOPlist.json",
-                BANNED: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/BANNEDlist.json"
+                BANNED: "https://cdn.jsdelivr.net/gh/Yemasthui/basicBot-customization/blacklists/BANNEDlist.json"
             }
         },
         room: {
@@ -2477,7 +2477,7 @@ return API.moderateForceSkip();
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentlang, {language: basicBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/ureadmyname/OLD-FARTS-ROOMBOT/master/lang/langIndex.json", function (json) {
+                        $.get("https://cdn.jsdelivr.net/gh/ureadmyname/OLD-FARTS-ROOMBOT/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
